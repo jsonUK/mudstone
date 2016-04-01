@@ -5,8 +5,6 @@ var assets = './_assets/',
     base = 'tmp',
     env = 'dev', //  env = dev will create sourcemaps, set as live will not
     outputStyle = 'expanded', // scss output style
-    build,
-    server,
     assetPath = "/_assets/"; 
 /*
  * @param state
@@ -24,7 +22,7 @@ var assets = './_assets/',
  */
 var state = 'dev', 
     jadeDest = root, // where should the jade templates be built, usually root, except when state === cms
-    public_html = 'public',
+    public_html = 'public_html',
     url = 'local.ournameismud.co.uk';
 /*
  * Update values based on environment
@@ -109,18 +107,20 @@ module.exports = {
   images: {
     src: assets + 'images/site/*',
     dest: build + 'images'
-  }, 
-
-  //^\is-\S+
+  },
  
   scripts: {
-    src: assets + 'js/app.js',
-    libs: assets + 'js/libs/*.js',
-    path: assets + 'js/',
-    libsOutput: 'libs.js',
-    output: 'app.js',
-    tmp: build + 'js/tmp',
+    src: [
+      assets + 'js/libs/jquery-1.11.3.min.js',
+      assets + 'js/libs/underscore-min.js',
+      assets + 'js/plugins/*.js',
+      assets + 'js/application.js',
+      assets + 'js/tools.js',
+      assets + 'js/behaviours/*.js'
+    ],
     dest: build + 'js/dist',
+    output: 'app.js',
+    hint:  assets + 'js/behaviours/*.js'
   },
  
   sprites: {
@@ -146,11 +146,10 @@ module.exports = {
   svgStore: {
     src: assets + 'images/svg-inline/*.svg',
     dest: assets + 'images/svg-inline/output/',
-    file: assets + 'images/svg-inline/source.html',
-    fileName: 'source.html',
-    jadeDest: assets + 'jade/source/_includes'
+    file: assets + 'images/svg-inline/inline-svg.html',
+    fileName: 'inline-svg.html',
+    jadeDest: assets + 'jade/source/includes'
   },
-
  
   icons: {
     src: assets + 'images/icons/*.svg',
@@ -171,7 +170,7 @@ module.exports = {
  
   // THESE PATHS NEED UPDATING BEFORE USING THE UNCSS TASK
   uncss: {
-    css: build + 'css/style.css',
+    css: assets + 'css/style.css',
     html: root + '**/*.html',
     dest: build + 'css'
   },
@@ -196,15 +195,7 @@ module.exports = {
     css_src: build + 'css/*.css',
     css_dest: build + 'css/',
     html_src: root + '*.html',
-    html_dest: build + 'static/',
-    htmlScript: root + '*.html',
-    htmlScriptDest: root,
-    clean: [
-      build + 'js',
-      build + 'css'
-    ],
-    favicon_src: assets + 'favicons/*',
-    favicon_dest: build + 'favicons/'
+    html_dest: build + 'static/'
   },
  
   // styleguide: {
@@ -217,4 +208,3 @@ module.exports = {
   // }
  
 };
-

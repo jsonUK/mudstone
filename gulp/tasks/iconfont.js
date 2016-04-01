@@ -3,8 +3,7 @@ var gulp              = require('gulp'),
     iconfont          = require('gulp-iconfont'),       
     config            = require('../config').icons,     
     handleErrors      = require('../util/handleErrors'),
-    iconfontCss       = require('gulp-iconfont-css'),   
-    runSequence       = require('run-sequence');        
+    iconfontCss       = require('gulp-iconfont-css');    
 
 gulp.task('iconfont', function(){
  gulp.src(config.src)

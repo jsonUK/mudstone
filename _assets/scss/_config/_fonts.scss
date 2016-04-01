@@ -1,3 +1,9 @@
+/*
+    File: _assets/css/scss/_libs-mixins.scss
+        Preference for third-party mixin libraries is to use Bourbon
+        See https://github.com/thoughtbot/bourbon
+*/
+
 @mixin font-type($font: 'base') {
   @if $font == bold {
     font-weight: 800;
