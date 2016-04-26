@@ -12,11 +12,6 @@
   @return $computed / $fs;
 }
 
-
-@function ms($increment, $value: $modular-scale-base, $ratio: $modular-scale-ratio) {
-  @return modular-scale($increment, $value: $modular-scale-base, $ratio: $modular-scale-ratio);
-}
-
 // Map helpers
 
 // thanks to @ericmsuzanne for this function
@@ -26,10 +21,6 @@
 }
 
 // Layout
-
-@function r($lines: 1, $gutter: $base-padding) {
-	@return rem(($gutter * $lines));
-}
 
 @function gutter($lines: 1, $gutter: $base-padding) {
   @if length($lines) == 1 {
@@ -86,9 +77,6 @@
 
 // http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
 // use eg palette(accent,light)
-@function palette($palette, $tone: 'base') {
-    @return map-get(map-get($palettes, $palette), $tone);
-}
 
 @function c($palette, $tone: 'base') {
     @return map-get(map-get($palettes, $palette), $tone);

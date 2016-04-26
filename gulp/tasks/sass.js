@@ -12,7 +12,6 @@ import postcss from 'gulp-postcss';
 import cssnano from 'gulp-cssnano';
 import uncss from 'gulp-uncss';
 import config from '../config';
-import { includePaths } from 'node-bourbon';
 
 const $sass = config.sass;
 const $uncss = config.uncss;
@@ -22,7 +21,10 @@ gulp.task('sass', () => {
     .pipe(sourcemaps.init())
     .pipe(sass({
         outputStyle: $sass.options.outputStyle,
-        includePaths
+        includePaths: [
+            './node_modules/sassline/assets/sass',
+            require('node-bourbon').includePaths
+        ]
       }
     ))
     .on('error', handleErrors)

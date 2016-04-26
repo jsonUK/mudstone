@@ -39,22 +39,17 @@ fieldset {
 
 
 .form__input {
-	@include font-size(ms(0));
 	display: block;
 	border: 2px solid lighten($base-grey,40%);
 	padding: gutter(.5) gutter(.5);
 }
 
 .form__label {
-	@include font-type(bold);
-	@include font-size(ms(-1));
 	display: inline-block;
 	margin-bottom: gutter(.25);
 }
 
 .form__label--toggle {
-	@include font-type(base);
-	@include font-size(ms(0));
 	position: relative;
 	vertical-align: baseline;
 	padding-left: gutter(1.5);
@@ -66,7 +61,6 @@ fieldset {
 }
 
 .form__select {
-	@include font-size(ms(0));
 	position: relative;
 	display: block;
 	border: 2px solid lighten($base-grey,40%);

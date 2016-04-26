@@ -1,8 +1,6 @@
 // site logo
 .site-logo {
-	@include font-type(bold);
 	//@include font-family(display);
-	@include font-size(size(h6),false);
 	line-height: 1;
 	display: block;
 	position: relative;

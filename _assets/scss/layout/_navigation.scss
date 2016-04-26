@@ -68,8 +68,6 @@
 	}
 
 	.menu__item {
-		@include font-type(bold);
-		@include font-size(ms(1));
 		letter-spacing: 0.25em;
 		margin: 2vh 0;
 		transition: color .3s;
@@ -156,7 +154,6 @@
 	}
 
 	.menu__item {
-		@include font-type(base);
 		margin: 0 gutter(.5);
 		letter-spacing: normal;
 		color: $white;

@@ -2,7 +2,6 @@
 // <a href="#" class="btn btn--downloads"></a>
 .btn {
 	$btn-height: 44;
-    @include font-size(18,$btn-height);
     display:inline-block;
     vertical-align:middle;
     white-space:nowrap;
